@@ -1,28 +1,47 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-
+import "../styles/PureStyles.scss";
+import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 const Header = () => {
 	return (
 		<header className="header-container">
-			<Link className="header-title" to="/">
-				<h1>
-					<i class="fab fa-dev"></i>
-					Harrison <span class="text-secondary">Michael</span> Seaborn
-				</h1>
-			</Link>
-			<nav className="nav-link-cont">
+			<section className="header-main">
+				<div className="icon-wrap left">
+					<a href="https://twitter.com/HarrisonSeaborn">
+						<AiFillInstagram
+							fontSize="1em"
+							className="instagram"
+							color="#fff"
+						/>
+					</a>
+					<a href="https://twitter.com/HarrisonSeaborn">
+						<AiFillTwitterCircle
+							color="#fff"
+							fontSize="1em"
+							className="instagram-icon"
+						/>
+					</a>
+				</div>
+				<Link className="header-title" to="/projects">
+					<h1>Pure Entertainment</h1>
+				</Link>
+				<div className="icon-wrap right">
+					<a href="https://twitter.com/HarrisonSeaborn">
+						<AiFillInstagram
+							color="#fff"
+							fontSize="1em"
+							className="instagram-icon"
+						/>
+					</a>
+				</div>
+			</section>
+			<nav className="nav-links">
 				<Link className="nav-link" to="/">
 					Home
 				</Link>
 				<NavLink className="nav-link" to="/projects">
-					Projects
+					Wedding Stories
 				</NavLink>
-				<a
-					className="nav-link"
-					href="https://gitconnected.com/HarrisonMS/resume"
-				>
-					Resume
-				</a>
 				<NavLink className="nav-link" to="/about">
 					About
 				</NavLink>
