@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import LayoutOne from "./components/LayoutOne";
+import HomePage from "./components/HomePage";
 import MarketingPage from "./components/MarketingPage";
 function App() {
 	return (
@@ -10,7 +10,7 @@ function App() {
 			<div className="App">
 				<Header />
 				<Route exact path="/">
-					<LayoutOne />
+					<HomePage />
 				</Route>
 				<Route exact path="/projects">
 					<MarketingPage />

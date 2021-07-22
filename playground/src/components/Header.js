@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/PureStyles.scss";
-import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
+import {
+	AiFillInstagram,
+	AiFillTwitterCircle,
+	AiOutlineMail,
+} from "react-icons/ai";
 const Header = () => {
 	return (
 		<header className="header-container">
@@ -9,7 +13,7 @@ const Header = () => {
 				<div className="icon-wrap left">
 					<a href="https://twitter.com/HarrisonSeaborn">
 						<AiFillInstagram
-							fontSize="1em"
+							fontSize="1rem"
 							className="instagram"
 							color="#fff"
 						/>
@@ -17,7 +21,7 @@ const Header = () => {
 					<a href="https://twitter.com/HarrisonSeaborn">
 						<AiFillTwitterCircle
 							color="#fff"
-							fontSize="1em"
+							fontSize="1rem"
 							className="instagram-icon"
 						/>
 					</a>
@@ -27,25 +31,32 @@ const Header = () => {
 				</Link>
 				<div className="icon-wrap right">
 					<a href="https://twitter.com/HarrisonSeaborn">
-						<AiFillInstagram
+						<AiOutlineMail
 							color="#fff"
-							fontSize="1em"
+							fontSize="1rem"
 							className="instagram-icon"
 						/>
 					</a>
 				</div>
 			</section>
 			<nav className="nav-links">
-				<Link className="nav-link" to="/">
+				<NavLink exact activeClassName="active" className="nav-link" to="/">
 					Home
-				</Link>
-				<NavLink className="nav-link" to="/projects">
+				</NavLink>
+				<NavLink activeClassName="active" className="nav-link" to="/projects">
+					Services
+				</NavLink>
+				<NavLink activeClassName="active" className="nav-link" to="/portfolio">
+					Portfolio
+				</NavLink>
+				<NavLink activeClassName="active" className="nav-link" to="/stories">
 					Wedding Stories
 				</NavLink>
-				<NavLink className="nav-link" to="/about">
+
+				<NavLink activeClassName="active" className="nav-link" to="/about">
 					About
 				</NavLink>
-				<NavLink className="nav-link" to="/contact">
+				<NavLink activeClassName="active" className="nav-link" to="/contact">
 					Contact
 				</NavLink>
 			</nav>
