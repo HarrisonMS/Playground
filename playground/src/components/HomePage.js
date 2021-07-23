@@ -9,7 +9,6 @@ function HomePage() {
 	const cbFunction = (entries) => {
 		const [entry] = entries;
 		setIsVisible(entry.isIntersecting);
-		console.log(entry.isIntersecting);
 	};
 	const options = {
 		root: null,
@@ -63,7 +62,19 @@ function HomePage() {
 					</div>
 				</section>
 			</section>
-
+			<section className="recent_work">
+				<h3>Recent Work</h3>
+				<div className="recent_work_wrapper">
+					<div className="recent_work_left">
+						<img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.18169-9/19247976_10158963797820319_7252567882519202454_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=730e14&_nc_ohc=0CUvq0UGUMwAX_hZXXS&_nc_ht=scontent-sea1-1.xx&oh=5279bf1fdca7541155bc2e28b732af49&oe=60FE4FFB"></img>
+						<p>Description of Photograph</p>
+					</div>
+					<div className="recent_work_right">
+						<img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.18169-9/19247976_10158963797820319_7252567882519202454_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=730e14&_nc_ohc=0CUvq0UGUMwAX_hZXXS&_nc_ht=scontent-sea1-1.xx&oh=5279bf1fdca7541155bc2e28b732af49&oe=60FE4FFB"></img>
+						<p>Description of Photograph</p>
+					</div>
+				</div>
+			</section>
 			<section class="hero"></section>
 		</div>
 	);

@@ -47,8 +47,11 @@ h6 {
 }
 a {
 	text-decoration: none;
-	color: #fff;
+	color: rgb(238, 235, 235);
 	font-family: "Lato", sans-serif;
+}
+p {
+	color: rgb(238, 235, 235);
 }
 
 /* header nav {
@@ -158,4 +161,28 @@ a {
 }
 .button:active {
 	transform: scale(0.98);
+}
+
+.recent_work {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	h3 {
+		padding-left: 20%;
+		color: rgb(238, 235, 235);
+	}
+}
+
+.recent_work {
+	display: flex;
+	flex-direction: column;
+}
+.recent_work_wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.recent_work_right {
+	padding-top: 10%;
 }
