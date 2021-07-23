@@ -118,15 +118,32 @@ a {
 		padding-bottom: 4%;
 	}
 }
+.button_animation {
+	animation-name: animate1;
 
-.button-wrapper {
-	position: absolute;
-	top: 82%;
-	right: 70%;
-	width: 200px;
-	height: 100px;
+	animation-duration: 2500ms;
+	animation-timing-function: linear;
+	transition-timing-function: ease-in;
+}
+
+.button_wrapper {
+	position: relative;
+	bottom: 15%;
+	right: 2%;
+}
+@keyframes animate1 {
+	from {
+		bottom: -15%;
+		right: 2%;
+	}
+
+	to {
+		bottom: 15%;
+		right: 2%;
+	}
 }
 .button {
+	cursor: pointer;
 	background-color: rgb(223, 76, 210); /* Green */
 	border: none;
 	color: white;
@@ -135,4 +152,10 @@ a {
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+}
+.button:hover {
+	filter: brightness(95%);
+}
+.button:active {
+	transform: scale(0.98);
 }
