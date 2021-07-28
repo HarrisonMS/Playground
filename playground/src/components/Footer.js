@@ -5,6 +5,7 @@ import {
 	AiOutlinePhone,
 } from "react-icons/ai";
 import { BsEnvelopeFill } from "react-icons/bs";
+import { FaRegEnvelope } from "react-icons/fa";
 
 function Footer() {
 	return (
@@ -35,7 +36,7 @@ function Footer() {
 
 				<div>
 					<a href="https://twitter.com/HarrisonSeaborn">
-						<BsEnvelopeFill fontSize="1rem" color="#fff" />
+						<FaRegEnvelope fontSize="1rem" color="#fff" />
 					</a>
 					<p>
 						<a href="mailto:support@company.com">onlyguys@gmail.com</a>

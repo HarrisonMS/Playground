@@ -84,7 +84,7 @@ p {
 	}
 }
 .one {
-	background-image: url("https://picsum.photos/200/300");
+	background-image: url("https://source.unsplash.com/random/800x600");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -194,4 +194,5 @@ p {
 	width: 100%;
 	background-color: rgb(12, 12, 12);
 	height: 60px;
+	z-index: 99;
 }
