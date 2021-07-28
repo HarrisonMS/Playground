@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/PureStyles.scss";
 import {
@@ -7,9 +7,45 @@ import {
 	AiOutlineMail,
 } from "react-icons/ai";
 const Header = () => {
+	const containerRef = useRef(null);
+
+	const [isVisible, setIsVisible] = useState(false);
+
+	const cbFunction = (entries) => {
+		const [entry] = entries;
+		setIsVisible(entry.isIntersecting);
+	};
+	const options = {
+		root: null,
+		rootMargin: "0px",
+		threshold: [0, 0.25, 0.5, 0.75, 1],
+	};
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(cbFunction, options);
+		let target = document.querySelector(".nav-links");
+		if (containerRef.current) {
+			observer.observe(containerRef.current);
+
+			if (!isVisible) {
+				console.log("in the if", isVisible);
+				target.classList.add("sticky");
+			}
+		}
+		return () => {
+			if (containerRef.current) {
+				observer.unobserve(containerRef.current);
+				target.classList.remove("sticky");
+				// if (!isVisible) {
+
+				// }
+			}
+		};
+	}, [containerRef, options]);
+
 	return (
-		<header className="header-container">
-			<section className="header-main">
+		<header className="header-container ">
+			<section className="header-main" ref={containerRef}>
 				<div className="icon-wrap left">
 					<a href="https://twitter.com/HarrisonSeaborn">
 						<AiFillInstagram
