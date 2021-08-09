@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer.js";
-
+import MyForm from "./Email.js";
 function HomePage() {
 	const containerRef = useRef(null);
 
@@ -35,6 +35,33 @@ function HomePage() {
 		};
 	}, [containerRef, options]);
 
+	const recentWorkData = [
+		{
+			left_id: 1,
+			left_imageUrl: "https://picsum.photos/300",
+			left_description: "Left Description",
+			right_id: 1,
+			right_imageUrl: "https://picsum.photos/900",
+			right_description: "Right Description",
+		},
+		{
+			left_id: 2,
+			left_imageUrl: "https://picsum.photos/800",
+			left_description: "Left Description",
+			right_id: 2,
+			right_imageUrl: "https://picsum.photos/700",
+			right_description: "Right Description",
+		},
+		{
+			left_id: 3,
+			left_imageUrl: "https://picsum.photos/300",
+			left_description: "Left Description",
+			right_id: 3,
+			right_imageUrl: "https://picsum.photos/600",
+			right_description: "Right Description",
+		},
+	];
+
 	return (
 		<div>
 			<section className="about">
@@ -64,32 +91,56 @@ function HomePage() {
 				</section>
 			</section>
 			<section className="recent_work">
-				<h3>Recent Work</h3>
-				<div className="recent_work_wrapper">
+				<div className="testing">
+					<h3>Recent Work</h3>
+				</div>
+				{recentWorkData.map((item) => (
+					<div className="recent_work_wrapper">
+						<div className="recent_work_left" key={item.left_id}>
+							<div className="polaroid">
+								<img src={item.left_imageUrl}></img>
+								<p className="recent_work_p">{item.left_description}</p>
+							</div>
+						</div>
+						<div className="recent_work_right" key={item.right_id}>
+							<div className="polaroid">
+								<img src={item.right_imageUrl}></img>
+								<p className="recent_work_p">{item.right_description}</p>
+							</div>
+						</div>
+					</div>
+				))}
+				{/* <div className="recent_work_wrapper">
 					<div className="recent_work_left">
-						<img src="https://picsum.photos/300"></img>
-						<p>Description of Photograph</p>
+						<div className="polaroid">
+							<img src="https://picsum.photos/600"></img>
+							<p className="recent_work_p">Description of Photograph</p>
+						</div>
 					</div>
 					<div className="recent_work_right">
-						<img src="https://picsum.photos/300"></img>
-						<p>Description of Photograph</p>
+						<div className="polaroid">
+							<img src="https://picsum.photos/500"></img>
+							<p className="recent_work_p">Description of Photograph</p>
+						</div>
 					</div>
 				</div>
+				<div className="recent_work_wrapper">
+					<div className="recent_work_left">
+						<div className="polaroid">
+							<img src="https://picsum.photos/400"></img>
+							<p className="recent_work_p">Description of Photograph</p>
+						</div>
+					</div>
+					<div className="recent_work_right">
+						<div className="polaroid">
+							<img src="https://picsum.photos/300"></img>
+							<p className="recent_work_p">Description of Photograph</p>
+						</div>
+					</div>
+				</div> */}
 			</section>
 			<section class="hero"></section>
-			<section className="recent_work">
-				<h3>Recent Work</h3>
-				<div className="recent_work_wrapper">
-					<div className="recent_work_left">
-						<img src="https://picsum.photos/300"></img>
-						<p>Description of Photograph</p>
-					</div>
-					<div className="recent_work_right">
-						<img src="https://picsum.photos/300"></img>
-						<p>Description of Photograph</p>
-					</div>
-				</div>
-			</section>
+			<MyForm />
 			<Footer />
 		</div>
 	);

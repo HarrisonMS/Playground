@@ -1,10 +1,11 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 import {
 	AiFillInstagram,
 	AiFillTwitterCircle,
 	AiOutlinePhone,
 } from "react-icons/ai";
-import { BsEnvelopeFill } from "react-icons/bs";
+
 import { FaRegEnvelope } from "react-icons/fa";
 
 function Footer() {
@@ -12,8 +13,33 @@ function Footer() {
 		<footer className="footer-distributed">
 			<div className="footer-left">
 				<p className="footer-links">
-					<a href="#">Home</a> ·<a href="#">About</a> ·<a href="#">Pricing</a> ·
-					<a href="#">About</a> ·<a href="#">Faq</a> ·<a href="#">Contact</a>
+					<NavLink exact activeClassName="active" className="nav-link" to="/">
+						Home
+					</NavLink>{" "}
+					·{" "}
+					<NavLink activeClassName="active" className="nav-link" to="/projects">
+						Services
+					</NavLink>{" "}
+					·{" "}
+					<NavLink
+						activeClassName="active"
+						className="nav-link"
+						to="/portfolio"
+					>
+						Portfolio
+					</NavLink>{" "}
+					·{" "}
+					<NavLink activeClassName="active" className="nav-link" to="/stories">
+						Wedding Stories
+					</NavLink>{" "}
+					·{" "}
+					<NavLink activeClassName="active" className="nav-link" to="/about">
+						About
+					</NavLink>{" "}
+					·{" "}
+					<NavLink activeClassName="active" className="nav-link" to="/contact">
+						Contact
+					</NavLink>
 				</p>
 
 				<p className="footer-company-name">Bangin &copy; 2018</p>
